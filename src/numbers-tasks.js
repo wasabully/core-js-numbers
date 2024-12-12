@@ -322,9 +322,12 @@ const getSine = (num) => Math.sin(num);
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
-}
+const numberToStringInBase = (number, base) => {
+  if (number < 0) {
+    return '-' + Math.abs(number).toString(base);
+  }
+  return number.toString(base);
+};
 
 /**
  * Returns a string representation of a number in exponential notation.
